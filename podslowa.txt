@@ -1,0 +1,44 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int dl_slowa=0;
+	string slowo[50];
+	cout << "Wpisz slowo\n";
+	getline(slowo, cin);
+	dl_slowa=slowo.lenght();
+	
+	
+	string podslowo[100][100];
+	int p=0, k=0;
+	
+	for(int i=0;i<dl_slowa;i++)
+	{
+		for(int j=i;j<dl_slowa;j++)
+		{
+			k=0;
+			for(int pom=i;pom<j;pom++)
+			{
+				podslowo[p][k]=slowo[pom];
+				k++
+			}
+			p++;
+		}
+		
+	}
+	
+	for(int i=0;i<p;i++)
+	{
+		for(int j=0;j<100;j++)
+		{
+			cout << podslowo[i][j];
+		}
+		cout << "\n";
+	}
+	
+	return 0;
+}
